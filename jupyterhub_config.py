@@ -7,7 +7,9 @@
 ## This is an application.
 
 ## The date format used by logging formatters for %(asctime)s
-#c.Application.log_datefmt = '%Y-%m-%d %H:%M:%S'
+# Our logs are handled by the systemd journal, which adds its own timestamps,
+# so turn this timestamp off to make them more readable.
+c.Application.log_datefmt = ''
 
 ## The Logging format template
 #c.Application.log_format = '[%(name)s]%(highlevel)s %(message)s'
