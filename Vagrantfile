@@ -62,6 +62,7 @@ Vagrant.configure(2) do |config|
   # end
 
   config.vm.provision "file", source: "miniconda.sha512", destination: "/tmp/miniconda.sha512"
+  config.vm.provision "file", source: "cull_idle_servers.py", destination: "/tmp/cull_idle_servers.py"
   config.vm.provision "file", source: "jupyterhub_config.py", destination: "/tmp/jupyterhub_config.py"
   config.vm.provision "file", source: "jupyterhub.service", destination: "/tmp/jupyterhub.service"
   

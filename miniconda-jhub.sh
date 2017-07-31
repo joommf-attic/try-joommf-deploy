@@ -20,7 +20,8 @@ bash Miniconda3-4.3.14-Linux-x86_64.sh -b -p /opt/miniconda3
 echo "Installing jupyterhub.service systemd unit"
 cp jupyterhub.service /etc/systemd/system/jupyterhub.service
 
-echo "Installing jupyterhub_config.py"
+echo "Installing jupyterhub config"
+cp cull_idle_servers.py /opt/miniconda3/bin/cull_idle_servers.py
 mkdir -p /etc/jupyterhub
 cp jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
 

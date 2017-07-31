@@ -202,7 +202,13 @@ c.JupyterHub.hub_ip = public_ips()[0]
 #              'environment': 
 #          }
 #      ]
-#c.JupyterHub.services = []
+c.JupyterHub.services = [
+    {
+        'name': 'cull-idle',
+        'admin': True,
+        'command': ['cull_idle_servers.py'].split(),
+    }
+]
 
 ## The class to use for spawning single-user servers.
 #  
