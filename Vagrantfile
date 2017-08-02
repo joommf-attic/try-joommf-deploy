@@ -22,7 +22,7 @@ Vagrant.configure(2) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  config.vm.network "forwarded_port", guest: 8000, host: 8081
+  config.vm.network "forwarded_port", guest: 8000, host: 8081, host_ip: "127.0.0.1"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -61,10 +61,14 @@ Vagrant.configure(2) do |config|
   #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
   # end
 
-  config.vm.provision "file", source: "miniconda.sha512", destination: "/tmp/miniconda.sha512"
-  config.vm.provision "file", source: "cull_idle_servers.py", destination: "/tmp/cull_idle_servers.py"
-  config.vm.provision "file", source: "jupyterhub_config.py", destination: "/tmp/jupyterhub_config.py"
-  config.vm.provision "file", source: "jupyterhub.service", destination: "/tmp/jupyterhub.service"
+  config.vm.provision "file", source: "miniconda.sha512",
+    destination: "/tmp/miniconda.sha512"
+  config.vm.provision "file", source: "cull_idle_servers.py",
+    destination: "/tmp/cull_idle_servers.py"
+  config.vm.provision "file", source: "jupyterhub_config.py",
+    destination: "/tmp/jupyterhub_config.py"
+  config.vm.provision "file", source: "jupyterhub.service",
+    destination: "/tmp/jupyterhub.service"
   
   config.vm.provision "shell", path: "miniconda-jhub.sh", keep_color: true
 end
