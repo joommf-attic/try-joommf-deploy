@@ -220,12 +220,12 @@ c.JupyterHub.spawner_class = 'dockerspawner.DockerSpawner'
 ## Path to SSL certificate file for the public facing interface of the proxy
 #  
 #  Use with ssl_key
-#c.JupyterHub.ssl_cert = ''
+c.JupyterHub.ssl_cert = '/etc/jupyterhub/ssl.crt'
 
 ## Path to SSL key file for the public facing interface of the proxy
 #  
 #  Use with ssl_cert
-#c.JupyterHub.ssl_key = ''
+c.JupyterHub.ssl_key = '/etc/jupyterhub/ssl.key'
 
 ## Host to send statsd metrics to
 #c.JupyterHub.statsd_host = ''

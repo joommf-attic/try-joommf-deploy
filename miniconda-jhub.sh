@@ -30,6 +30,22 @@ cp jupyterhub_config.py /etc/jupyterhub/jupyterhub_config.py
 echo "Getting docker image $DOCKER_IMG"
 docker pull $DOCKER_IMG
 
+echo "Creating self-signed SSL certificate"
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
+  -keyout /etc/jupyterhub/ssl.key -out /etc/jupyterhub/ssl.crt <<EOF
+UK
+England
+Southampton
+JOOMMF
+
+127.0.0.1
+
+EOF
+
+echo "Configuring nginx"
+# cp nginx-jh.conf /etc/nginx/sites-enabled/jupyterhub
+# systemctl restart nginx
+
 echo "Starting Jupyterhub"
 systemctl daemon-reload
 systemctl start jupyterhub
