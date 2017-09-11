@@ -208,7 +208,7 @@ c.JupyterHub.services = [
     {
         'name': 'cull-idle',
         'admin': True,
-        'command': ['cull_idle_servers.py'].split(),
+        'command': ['cull_idle_servers.py'],
     }
 ]
 
