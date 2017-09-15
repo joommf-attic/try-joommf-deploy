@@ -48,4 +48,5 @@ echo "Configuring nginx"
 
 echo "Starting Jupyterhub"
 systemctl daemon-reload
+systemctl enable jupyterhub  # Start again on restart
 systemctl start jupyterhub
