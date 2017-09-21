@@ -399,7 +399,7 @@ c.JupyterHub.ssl_key = '/etc/jupyterhub/ssl.key'
 #  to allocate this much memory - only that it can not allocate more than this.
 #  
 #  This needs to be supported by your spawner for it to work.
-#c.Spawner.mem_limit = None
+c.Spawner.mem_limit = '4G'
 
 ## Path to the notebook directory for the single-user server.
 #  
