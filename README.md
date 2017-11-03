@@ -22,6 +22,20 @@ JupyterHub is run as a `systemd` service. Its public-facing interface (the
 proxy) listens on port 8000 in the VM, which Vagrant maps to port 8000 on the
 host.
 
+Use `vagrant suspend` to take it down temporarily, or `vagrant destroy` to take
+it down permanently (e.g. to deploy a new version).
+
+## Docker image
+
+The contents of the individual notebook servers started come from a docker
+image: we use our [joommf/tryjoommf](https://hub.docker.com/r/joommf/tryjoommf/)
+image, which is built from the `joommf-docker-image` folder in this repository.
+
+To use a different docker image, you need to change it both in
+`miniconda-jhub.sh` (the setup script that fetches it), and in
+`jupyterhub_config.py` (which tells Jupyter to use it). Use a specific digest or
+stable tag (i.e. not `latest`), so that the deployment is reproducible.
+
 ## Security
 
 The application accepts HTTPS connections with a self-signed SSL certificate.
