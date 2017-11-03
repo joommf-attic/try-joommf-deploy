@@ -2,7 +2,7 @@
 
 set -e
 
-DOCKER_IMG="jupyterhub/singleuser:0.7"
+DOCKER_IMG="jupyterhub/singleuser:0.8"
 
 apt-get update
 apt install -y docker.io
@@ -14,7 +14,7 @@ sha512sum -c miniconda.sha512
 bash Miniconda3-4.3.14-Linux-x86_64.sh -b -p /opt/miniconda3
 
 # Install Jupyterhub itself using conda (pulls in nodejs)
-/opt/miniconda3/bin/conda install -y -c conda-forge jupyterhub=0.7 notebook
+/opt/miniconda3/bin/conda install -y -c conda-forge jupyterhub=0.8 notebook
 # Install tmpauthenticator and dockerspawner
 /opt/miniconda3/bin/pip install jupyterhub-tmpauthenticator dockerspawner
 

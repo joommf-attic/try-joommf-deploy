@@ -204,11 +204,12 @@ c.JupyterHub.hub_ip = public_ips()[0]
 #              'environment': 
 #          }
 #      ]
+import sys
 c.JupyterHub.services = [
     {
         'name': 'cull-idle',
         'admin': True,
-        'command': ['cull_idle_servers.py'],
+        'command': [sys.executable, '/opt/miniconda3/bin/cull_idle_servers.py'],
     }
 ]
 
