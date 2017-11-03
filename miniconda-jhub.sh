@@ -2,7 +2,7 @@
 
 set -e
 
-DOCKER_IMG="jupyterhub/singleuser:0.8"
+DOCKER_IMG="joommf/joommf@sha256:a4014f4d2cb88373834f590c3a79ec3c46f178e104b740e7f3669c780b5e6457"
 
 apt-get update
 apt install -y docker.io
