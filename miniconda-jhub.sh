@@ -2,7 +2,7 @@
 
 set -e
 
-DOCKER_IMG="joommf/joommf@sha256:3de59f38c8900a71d84dcdb6fe6b01480dac8a2f7aeef622271b4dd9e9bd62c7"
+DOCKER_IMG="joommf/tryjoommf@sha256:85fed1c1953bad15cf11d3d78adc8f2076f53144191de8f316272a8b9d35d5c6"
 
 apt-get update
 apt install -y docker.io

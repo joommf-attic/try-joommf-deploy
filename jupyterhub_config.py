@@ -290,9 +290,9 @@ c.JupyterHub.ssl_key = '/etc/jupyterhub/ssl.key'
 #  Some spawners allow shell-style expansion here, allowing you to use
 #  environment variables. Most, including the default, do not. Consult the
 #  documentation for your spawner to verify!
-c.Spawner.cmd = ['jupyterhub-singleuser']
+#c.Spawner.cmd = ['jupyterhub-singleuser']
 
-c.DockerSpawner.image = "joommf/joommf@sha256:3de59f38c8900a71d84dcdb6fe6b01480dac8a2f7aeef622271b4dd9e9bd62c7"
+c.DockerSpawner.image = "joommf/tryjoommf@sha256:85fed1c1953bad15cf11d3d78adc8f2076f53144191de8f316272a8b9d35d5c6"
 
 ## Minimum number of cpu-cores a single-user notebook server is guaranteed to
 #  have available.
