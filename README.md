@@ -15,6 +15,8 @@ running Ubuntu. It installs:
   JupyterHub plugin to provide temporary accounts with no login.
 - [dockerspawner](https://github.com/jupyterhub/dockerspawner) - a
   JupyterHub plugin to run notebook servers in docker containers.
+- [Statsd](https://github.com/etsy/statsd) and Graphite, to monitor how many
+  users are connecting.
 - `cull_idle_servers.py`, a JupyterHub service to shut down inactive notebook
   servers.
 
