@@ -229,7 +229,7 @@ c.JupyterHub.ssl_cert = '/etc/jupyterhub/ssl.crt'
 c.JupyterHub.ssl_key = '/etc/jupyterhub/ssl.key'
 
 ## Host to send statsd metrics to
-#c.JupyterHub.statsd_host = ''
+c.JupyterHub.statsd_host = 'localhost'
 
 ## Port on which to send statsd metrics about the hub
 #c.JupyterHub.statsd_port = 8125

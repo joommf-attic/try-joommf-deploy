@@ -1,0 +1,16 @@
+[Unit]
+Description=Graphite & Statsd in docker
+After=syslog.target network.target
+
+[Service]
+User=root
+ExecStart=/usr/bin/docker run --name graphite --restart=always \
+ -p 80:80\
+ -p 2003-2004:2003-2004\
+ -p 2023-2024:2023-2024\
+ -p 8125:8125/udp\
+ -p 8126:8126\
+ graphiteapp/graphite-statsd
+
+[Install]
+WantedBy=multi-user.target

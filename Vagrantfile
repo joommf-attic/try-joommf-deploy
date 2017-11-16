@@ -69,6 +69,8 @@ Vagrant.configure(2) do |config|
     destination: "/tmp/jupyterhub_config.py"
   config.vm.provision "file", source: "jupyterhub.service",
     destination: "/tmp/jupyterhub.service"
+  config.vm.provision "file", source: "graphite-statsd.service",
+    destination: "/tmp/graphite-statsd.service"
   
   config.vm.provision "shell", path: "miniconda-jhub.sh", keep_color: true
 end
