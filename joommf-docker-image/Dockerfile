@@ -2,7 +2,7 @@ FROM joommf/oommf
 
 RUN apt update -y
 RUN apt install -y apt-transport-https ca-certificates \
-      lxc iptables curl python3-pip
+      lxc iptables curl python3-pip unzip
 
 RUN python3 -m pip install --upgrade pip joommf jupyterhub
 
