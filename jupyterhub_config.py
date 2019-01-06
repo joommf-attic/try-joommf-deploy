@@ -204,11 +204,12 @@ c.JupyterHub.hub_ip = public_ips()[0]
 #              'environment': 
 #          }
 #      ]
+import sys
 c.JupyterHub.services = [
     {
         'name': 'cull-idle',
         'admin': True,
-        'command': ['cull_idle_servers.py'],
+        'command': [sys.executable, '/opt/miniconda3/bin/cull_idle_servers.py'],
     }
 ]
 
@@ -228,7 +229,7 @@ c.JupyterHub.ssl_cert = '/etc/jupyterhub/ssl.crt'
 c.JupyterHub.ssl_key = '/etc/jupyterhub/ssl.key'
 
 ## Host to send statsd metrics to
-#c.JupyterHub.statsd_host = ''
+c.JupyterHub.statsd_host = 'localhost'
 
 ## Port on which to send statsd metrics about the hub
 #c.JupyterHub.statsd_port = 8125
@@ -290,6 +291,8 @@ c.JupyterHub.ssl_key = '/etc/jupyterhub/ssl.key'
 #  environment variables. Most, including the default, do not. Consult the
 #  documentation for your spawner to verify!
 #c.Spawner.cmd = ['jupyterhub-singleuser']
+
+c.DockerSpawner.image = "joommf/tryjoommf@sha256:85fed1c1953bad15cf11d3d78adc8f2076f53144191de8f316272a8b9d35d5c6"
 
 ## Minimum number of cpu-cores a single-user notebook server is guaranteed to
 #  have available.

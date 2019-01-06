@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "bento/ubuntu-16.04"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -69,6 +69,8 @@ Vagrant.configure(2) do |config|
     destination: "/tmp/jupyterhub_config.py"
   config.vm.provision "file", source: "jupyterhub.service",
     destination: "/tmp/jupyterhub.service"
+  config.vm.provision "file", source: "graphite-statsd.service",
+    destination: "/tmp/graphite-statsd.service"
   
   config.vm.provision "shell", path: "miniconda-jhub.sh", keep_color: true
 end
